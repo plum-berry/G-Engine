@@ -23,3 +23,10 @@ target_link_libraries(engine
         glm
         glfw
 )
+
+function(engine_copy_shaders target)
+  add_custom_command(TARGET ${target} POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+            ${CMAKE_CURRENT_FUNCTION_LIST_DIR}/Shaders
+            $<TARGET_FILE_DIR:${target}>/Shaders)
+endfunction()
