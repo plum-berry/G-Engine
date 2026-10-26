@@ -1,0 +1,11 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/plum/dev/glfw/glfw-3.5.1/build/cmake_install.cmake",
+		"/home/plum/dev/glfw/glfw-3.5.1/build/src/cmake_install.cmake",
+		"/home/plum/dev/glfw/glfw-3.5.1/build/examples/cmake_install.cmake",
+		"/home/plum/dev/glfw/glfw-3.5.1/build/tests/cmake_install.cmake",
+		"/home/plum/dev/glfw/glfw-3.5.1/build/docs/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
