@@ -29,6 +29,8 @@ Triangle::Triangle(glm::vec2 A,glm::vec2 B,glm::vec2 C)
     glVertexAttribPointer(0,2,GL_FLOAT,GL_FALSE,2*sizeof(float),(void*)0);
     glEnableVertexAttribArray(0);
 
+    glBindVertexArray(0);
+
     // temporarily using Cirlcle.vs 
     // TODO: Make a Default Shader2D
     shader  =  new Shader("Shaders/Circle.vs","Shaders/Circle.fs");
