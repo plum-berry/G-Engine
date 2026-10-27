@@ -7,4 +7,5 @@
 #include<App.h>
 #include<Random.h>
 #include<Color.h>
+#include<Triangle.h>
 #endif
