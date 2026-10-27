@@ -10,6 +10,7 @@ target_sources(engine
         src/Camera.cpp
         src/Circle.cpp
         src/App.cpp
+        src/Triangle.cpp
 )
 
 target_include_directories(engine
