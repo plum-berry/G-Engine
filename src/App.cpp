@@ -5,7 +5,7 @@ int App::Init(int Width,int Height)
 {
     this->Width = Width;
     this->Height = Height;
-
+//    glfwInitHint(GLFW_PLATFORM, GLFW_PLATFORM_X11); 
     //initializing glfw
     if(!glfwInit())
         return -1;
@@ -15,6 +15,7 @@ int App::Init(int Width,int Height)
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
     glfwWindowHintString(GLFW_WAYLAND_APP_ID, "flock_sim");
+    // glfwWindowHint(GLFW_RESIZABLE,GLFW_FALSE);
 
     window= glfwCreateWindow(Width, Height, "Flock Sim", nullptr, nullptr);
 
