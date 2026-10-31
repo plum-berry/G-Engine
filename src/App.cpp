@@ -14,11 +14,16 @@ int App::Init(int Width,int Height)
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+
     glfwWindowHintString(GLFW_WAYLAND_APP_ID, "flock_sim");
 
+    glfwWindowHint(GLFW_FLOATING,GLFW_TRUE);
+    glfwWindowHint(GLFW_RESIZABLE,GLFW_FALSE);
+    glfwWindowHint(GLFW_DECORATED,GLFW_TRUE);
+    glfwWindowHint(GLFW_SCALE_TO_MONITOR,GLFW_TRUE);
 
-    // glfwWindowHint(GLFW_RESIZABLE,GLFW_FALSE);
-    glfwWindowHint(GLFW_SAMPLES,1);
+    glfwWindowHint(GLFW_SAMPLES,4);
+    
 
     window= glfwCreateWindow(Width, Height, "Flock Sim", nullptr, nullptr);
     // Adding anti aliasing using MSAA
@@ -42,8 +47,6 @@ int App::Init(int Width,int Height)
     }
 
     std::printf("OpenGL %d.%d\n", GLAD_VERSION_MAJOR(version), GLAD_VERSION_MINOR(version));
-
-    glEnable(GL_MULTISAMPLE);
     // setting up callbacks
     glfwSetWindowUserPointer(window,this);
     glfwSetFramebufferSizeCallback(window,FramebufferSizeCB);
