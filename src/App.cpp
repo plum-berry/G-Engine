@@ -1,7 +1,7 @@
 #include<App.h>
 
 
-int App::Init(int Width,int Height)
+int App::Init(const char* windowString,int Width,int Height)
 {
     this->Width = Width;
     this->Height = Height;
@@ -15,17 +15,17 @@ int App::Init(int Width,int Height)
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-    glfwWindowHintString(GLFW_WAYLAND_APP_ID, "flock_sim");
+    //glfwWindowHintString(GLFW_WAYLAND_APP_ID, "flock_sim");
 
     glfwWindowHint(GLFW_FLOATING,GLFW_TRUE);
     glfwWindowHint(GLFW_RESIZABLE,GLFW_FALSE);
     glfwWindowHint(GLFW_DECORATED,GLFW_TRUE);
-    glfwWindowHint(GLFW_SCALE_TO_MONITOR,GLFW_TRUE);
+    // glfwWindowHint(GLFW_SCALE_TO_MONITOR,GLFW_TRUE);
 
     glfwWindowHint(GLFW_SAMPLES,4);
     
 
-    window= glfwCreateWindow(Width, Height, "Flock Sim", nullptr, nullptr);
+    window= glfwCreateWindow(Width, Height,windowString, nullptr, nullptr);
     // Adding anti aliasing using MSAA
     // glfwWindowHint(GLFW_SAMPLES,4);
     // glEnable(GL_MULTISAMPLE);
@@ -45,6 +45,8 @@ int App::Init(int Width,int Height)
         std::fprintf(stderr, "GLAD failed\n"); 
         return -1; 
     }
+    // locks frame rate to you monitare refresh rate
+    glfwSwapInterval(1);
 
     std::printf("OpenGL %d.%d\n", GLAD_VERSION_MAJOR(version), GLAD_VERSION_MINOR(version));
     // setting up callbacks

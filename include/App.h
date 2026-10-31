@@ -18,7 +18,7 @@ class App
    public:
 
 
-    int Init(int Width,int Height);
+    int Init(const char* windowString,int Width,int Height);
     void ProcessInputs();
     void DrawBG();
     void Destroy();
